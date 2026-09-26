@@ -1,10 +1,16 @@
+/* =========================
+   APP
+========================= */
+
 .app {
     min-height: 100vh;
     background: #f5f7fb;
     color: #1e293b;
 }
 
-/* Header */
+/* =========================
+   HEADER
+========================= */
 
 .header {
     background: #0f172a;
@@ -43,6 +49,7 @@
 
 .logo h1 {
     margin: 0;
+
     font-size: 20px;
 }
 
@@ -52,6 +59,10 @@
     color: #94a3b8;
     font-size: 13px;
 }
+
+/* =========================
+   STATUS
+========================= */
 
 .status {
     display: flex;
@@ -76,13 +87,20 @@
     background: #22c55e;
 }
 
-/* Main */
+/* =========================
+   MAIN CONTAINER
+========================= */
 
 .container {
     width: min(1180px, calc(100% - 40px));
     margin: 0 auto;
+
     padding: 48px 0;
 }
+
+/* =========================
+   DASHBOARD HEADER
+========================= */
 
 .dashboard-header {
     margin-bottom: 30px;
@@ -97,10 +115,13 @@
 
 .dashboard-header p {
     margin: 0;
+
     color: #64748b;
 }
 
-/* Statistics */
+/* =========================
+   STATISTICS
+========================= */
 
 .stats {
     display: grid;
@@ -161,38 +182,193 @@
     color: #16a34a;
 }
 
-/* Placeholder */
+.stat-card .loss {
+    color: #dc2626;
+}
 
-.placeholder {
-    padding: 30px;
+/* =========================
+   TRADE FORM CARD
+========================= */
+
+.trade-form-card {
+    padding: 28px;
 
     background: white;
 
     border: 1px solid #e2e8f0;
     border-radius: 14px;
+
+    box-shadow: 0 4px 15px rgba(15, 23, 42, 0.04);
 }
 
-.placeholder h3 {
-    margin: 0 0 8px;
+.section-header {
+    margin-bottom: 24px;
 }
 
-.placeholder p {
+.section-header h3 {
+    margin: 0 0 5px;
+
+    color: #0f172a;
+    font-size: 20px;
+}
+
+.section-header p {
     margin: 0;
+
     color: #64748b;
+    font-size: 14px;
 }
 
-/* Responsive */
+/* =========================
+   TRADE FORM
+========================= */
 
-@media (max-width: 768px) {
+.trade-form {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr auto;
+    gap: 16px;
+
+    align-items: end;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.form-group label {
+    color: #475569;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    height: 44px;
+
+    padding: 0 12px;
+
+    background: white;
+    color: #0f172a;
+
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s,
+        box-shadow 0.2s;
+}
+
+.form-group input::placeholder {
+    color: #94a3b8;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #2563eb;
+
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* =========================
+   ADD TRADE BUTTON
+========================= */
+
+.add-trade-button {
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 0 20px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #2563eb;
+    color: white;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s,
+        transform 0.2s,
+        box-shadow 0.2s;
+}
+
+.add-trade-button:hover {
+    background: #1d4ed8;
+
+    transform: translateY(-1px);
+
+    box-shadow: 0 5px 12px rgba(37, 99, 235, 0.2);
+}
+
+.add-trade-button:active {
+    transform: translateY(0);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 850px) {
     .stats {
         grid-template-columns: 1fr;
     }
 
+    .trade-form {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .add-trade-button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 550px) {
+    .header__container {
+        width: min(100% - 24px, 1180px);
+    }
+
     .container {
+        width: min(100% - 24px, 1180px);
+
         padding: 32px 0;
     }
 
     .dashboard-header h2 {
-        font-size: 26px;
+        font-size: 25px;
+    }
+
+    .trade-form {
+        grid-template-columns: 1fr;
+    }
+
+    .trade-form-card {
+        padding: 20px;
+    }
+
+    .stat-card {
+        padding: 20px;
+    }
+
+    .logo p {
+        display: none;
+    }
+
+    .status {
+        padding: 7px 10px;
+
+        font-size: 12px;
     }
 }
