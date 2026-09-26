@@ -87,6 +87,19 @@
     background: #22c55e;
 }
 
+.status--active .status__dot {
+    background: #22c55e;
+}
+
+.status--idle .status__dot {
+    background: #f59e0b;
+}
+
+.status--idle {
+    color: #fbbf24;
+    border-color: #92400e;
+}
+
 /* =========================
    MAIN CONTAINER
 ========================= */

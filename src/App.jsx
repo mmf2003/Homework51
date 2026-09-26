@@ -4,12 +4,15 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import Header from "./components/Header";
+import IdleTracker from "./components/IdleTracker";
 import TradeForm from "./components/TradeForm";
 import TradeList from "./components/TradeList";
 
 import "./App.css";
 
 function App() {
+    const [isIdle, setIsIdle] = useState(false);
+
     const [trades, setTrades] = useState([
         {
             id: 1,
@@ -49,7 +52,9 @@ function App() {
 
     return (
         <div className="app">
-            <Header />
+            <IdleTracker onStatusChange={setIsIdle} />
+
+            <Header isIdle={isIdle} />
 
             <main className="container">
                 <section className="dashboard-header">

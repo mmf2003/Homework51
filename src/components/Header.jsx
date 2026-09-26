@@ -1,6 +1,6 @@
 import { FaChartLine } from "react-icons/fa6";
 
-function Header() {
+function Header({ isIdle }) {
     return (
         <header className="header">
             <div className="header__container">
@@ -15,9 +15,14 @@ function Header() {
                     </div>
                 </div>
 
-                <div className="status">
+                <div
+                    className={
+                        isIdle ? "status status--idle" : "status status--active"
+                    }
+                >
                     <span className="status__dot"></span>
-                    Active
+
+                    {isIdle ? "Idle" : "Active"}
                 </div>
             </div>
         </header>
