@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { FaChartLine, FaCircleCheck, FaDollarSign } from "react-icons/fa6";
-import { ToastContainer } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import Header from "./components/Header";
 import TradeForm from "./components/TradeForm";
+import TradeList from "./components/TradeList";
 
 import "./App.css";
 
@@ -34,6 +35,14 @@ function App() {
         setTrades((prevTrades) => [...prevTrades, trade]);
     };
 
+    const handleDeleteTrade = (id) => {
+        setTrades((prevTrades) =>
+            prevTrades.filter((trade) => trade.id !== id),
+        );
+
+        toast.warning("Trade deleted");
+    };
+
     const profitableTrades = trades.filter((trade) => trade.pnl > 0).length;
 
     const totalPnl = trades.reduce((total, trade) => total + trade.pnl, 0);
@@ -46,6 +55,7 @@ function App() {
                 <section className="dashboard-header">
                     <div>
                         <h2>Trading Dashboard</h2>
+
                         <p>Track and analyze your trading activity</p>
                     </div>
                 </section>
@@ -89,6 +99,8 @@ function App() {
                 </section>
 
                 <TradeForm onAddTrade={handleAddTrade} />
+
+                <TradeList trades={trades} onDelete={handleDeleteTrade} />
             </main>
 
             <ToastContainer position="top-right" autoClose={2500} />

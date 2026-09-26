@@ -372,3 +372,238 @@
         font-size: 12px;
     }
 }
+
+/* =========================
+   TRADE LIST
+========================= */
+
+.trade-list-section {
+    margin-top: 30px;
+
+    background: white;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+
+    box-shadow: 0 4px 15px rgba(15, 23, 42, 0.04);
+
+    overflow: hidden;
+}
+
+.trade-list-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    padding: 24px 28px;
+
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.trade-list-header h3 {
+    margin: 0 0 5px;
+
+    color: #0f172a;
+    font-size: 20px;
+}
+
+.trade-list-header p {
+    margin: 0;
+
+    color: #64748b;
+    font-size: 14px;
+}
+
+.trade-count {
+    padding: 6px 12px;
+
+    background: #f1f5f9;
+    color: #475569;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* =========================
+   TRADE ITEM
+========================= */
+
+.trade-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.trade-item {
+    display: grid;
+    grid-template-columns: 50px 1fr 130px 110px;
+    align-items: center;
+    gap: 16px;
+
+    padding: 20px 28px;
+
+    border-bottom: 1px solid #e2e8f0;
+
+    transition: background 0.2s;
+}
+
+.trade-item:last-child {
+    border-bottom: none;
+}
+
+.trade-item:hover {
+    background: #f8fafc;
+}
+
+/* Direction icon */
+
+.trade-direction {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    font-size: 18px;
+}
+
+.trade-direction--long {
+    background: #dcfce7;
+    color: #16a34a;
+}
+
+.trade-direction--short {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+/* Trade information */
+
+.trade-info h4 {
+    margin: 0 0 4px;
+
+    color: #0f172a;
+    font-size: 16px;
+}
+
+.trade-info span {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.direction-long {
+    color: #16a34a;
+}
+
+.direction-short {
+    color: #dc2626;
+}
+
+/* P&L */
+
+.trade-pnl {
+    font-size: 16px;
+    font-weight: 700;
+
+    text-align: right;
+}
+
+.trade-pnl--profit {
+    color: #16a34a;
+}
+
+.trade-pnl--loss {
+    color: #dc2626;
+}
+
+/* Delete button */
+
+.delete-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    height: 38px;
+
+    padding: 0 13px;
+
+    background: transparent;
+    color: #dc2626;
+
+    border: 1px solid #fecaca;
+    border-radius: 8px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s,
+        border-color 0.2s;
+}
+
+.delete-button:hover {
+    background: #fef2f2;
+    border-color: #f87171;
+}
+
+/* =========================
+   EMPTY STATE
+========================= */
+
+.empty-trades {
+    padding: 50px 20px;
+
+    text-align: center;
+}
+
+.empty-trades p {
+    margin: 0 0 6px;
+
+    color: #0f172a;
+
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.empty-trades span {
+    color: #64748b;
+    font-size: 14px;
+}
+
+/* =========================
+   TRADE LIST RESPONSIVE
+========================= */
+
+@media (max-width: 650px) {
+    .trade-list-header {
+        padding: 20px;
+    }
+
+    .trade-item {
+        grid-template-columns: 42px 1fr auto;
+
+        padding: 18px 20px;
+    }
+
+    .trade-pnl {
+        grid-column: 2;
+
+        text-align: left;
+    }
+
+    .delete-button {
+        grid-column: 3;
+        grid-row: 1 / 3;
+    }
+
+    .delete-button span {
+        display: none;
+    }
+}
