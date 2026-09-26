@@ -1,16 +1,74 @@
-# React + Vite
+# Trade Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Trade Tracker is a simple trading journal dashboard built with React and Vite.
 
-Currently, two official plugins are available:
+The application allows users to add and delete trades, track trading statistics, receive notifications, and monitor user activity.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Technologies
 
-## React Compiler
+- React
+- Vite
+- React Icons
+- React Toastify
+- React Idle Timer
+- JavaScript
+- CSS
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Features
 
-## Expanding the ESLint configuration
+- Add new trades
+- Delete trades
+- Long and Short trade directions
+- Automatic P&L calculation
+- Total trades statistics
+- Profitable trades statistics
+- React Icons integration
+- Success, error and warning notifications with React Toastify
+- User activity tracking with React Idle Timer
+- Active / Idle status
+- Responsive design
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Libraries
+
+### React Icons
+
+Used for dashboard, trade direction, add and delete icons.
+
+### React Toastify
+
+Used to display notifications when:
+
+- a trade is added
+- a trade is deleted
+- form validation fails
+- the user becomes inactive
+
+### React Idle Timer
+
+Tracks user activity.
+
+After 30 seconds of inactivity, the application changes the user status from `Active` to `Idle` and displays a warning notification.
+
+## Installation
+
+Clone the repository and install dependencies:
+
+```bash
+npm install
+```
+
+Run the development server:
+
+```bash
+npm run dev
+```
+
+## Build
+
+```bash
+npm run build
+```
+
+## Repository
+
+https://github.com/mmf2003/Homework51.git
